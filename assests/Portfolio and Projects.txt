@@ -1,0 +1,61 @@
+SaaS portfolio Description:
+
+This SaaS Portfolio showcases a collection of AI-powered, production-ready web and mobile applications designed to solve real-world problems using modern SaaS architecture. I built end-to-end solutions including AI code analysis tools, RAG-based knowledge systems, developer assistants, and data-driven platforms. My role covered system design, backend AI logic, frontend development, and deployment. The portfolio demonstrates scalable architecture, clean UI/UX, and practical AI integration, highlighting my ability to deliver impactful, business-ready SaaS products.
+
+Projects:
+
+Yellow-Forge AI 
+
+YellowForge AI is an intelligent Streamlit app generator that transforms plain ideas or PDF requirements into complete, production ready Streamlit applications in seconds. Powered by Groq’s Llama 3.1 model, it generates clean Python code, modern UI designs, and a full project package including app code, dependencies, and documentation. With customizable themes, responsive layouts, and instant downloads, YellowForge AI streamlines app creation and helps developers move from concept to working prototype with speed and confidence.
+
+Link: https://github.com/AlyaanKhan/Streamlt_app_generator
+
+
+DreamtoStartu Generator:
+
+Dream Startup Generator is a modern AI powered web app that turns personal dreams into creative startup ideas through intelligent analysis and elegant design. Users can share dreams via text or voice, explore emotional and symbolic insights, and generate complete startup concepts with business and market perspectives. Built with React and TypeScript, the app features a polished light and dark theme, smooth animations, glass morphism UI, and a guided, accessible experience that blends imagination with practical innovation.
+
+Link: https://github.com/AlyaanKhan/Dream_To_Startup
+
+KnowledgeAi:
+
+KnowledgeAI is an AI powered YouTube knowledge extraction platform that converts videos into structured learning materials such as summaries, chapter breakdowns, flashcards, quizzes, and key definitions. Using FastAPI on the backend, a modern React frontend, and Groq powered LLaMA and Whisper models, it delivers fast transcription, deep semantic analysis, and real time feedback through a polished light and dark themed interface. The platform is designed to help learners quickly understand, revise, and retain knowledge from long form video content with clarity and speed.
+
+Link: https://github.com/AlyaanKhan/Youtube_Knowledge
+
+QueryGenius:
+
+QueryGenius is an AI powered data query platform that lets users explore datasets using natural language with no SQL required. Users can upload CSV or Excel files, ask complex questions in plain English, and instantly get results, generated SQL, and interactive visualizations. Built with a React frontend and FastAPI backend using LangChain and Groq’s LLaMA 3.1 model, QueryGenius combines smart data analysis, query management, and modern dashboards to make data exploration fast, intuitive, and powerful.
+
+Link: https://github.com/AlyaanKhan/Query_generator
+
+DocuCraft:
+
+DocuCraft AI is a smart document generation app that transforms raw text into polished, professional files using AI driven text analysis. It automatically detects structure, content type, tables, lists, and headings, then recommends the best output formats with confidence scores. Built with Streamlit and Python, it generates high quality Word, PDF, Excel, CSV, JSON, and ODS documents with clean styling, live previews, and one click downloads, making document creation faster, smarter, and hassle free.
+
+Link: https://github.com/AlyaanKhan/Document_Convcerter
+
+
+Debate Master:
+
+AI Debate Partner is a web application that lets users engage in structured debates with an AI that always argues the strongest opposing position. It features multiple debate personalities, turn based rounds, real time scoring across logic and clarity, logical fallacy detection, and a final AI judged verdict with detailed analysis. Built with a React frontend and a FastAPI backend using Groq powered LLaMA models, the platform turns debate into a sharp, fast paced intellectual training ground focused on critical thinking and argument quality.
+
+Link: https://github.com/AlyaanKhan/AI-Debator
+
+PersonaChess:
+
+PersonaChess is an intelligent chess platform that blends classic gameplay with personality driven AI, natural language reasoning, and adaptive coaching. Players face AI opponents with distinct play styles while receiving real time commentary, psychological insights, and optional coaching suggestions. Built with a FastAPI backend, React frontend, and Groq powered LLaMA models, the app delivers a visually rich, story driven chess experience that is both educational and engaging for casual players and serious learners alike
+
+Link: https://github.com/AlyaanKhan/ChessAI
+
+AI Model Recommender:
+
+AI Model Recommender is an interactive Streamlit web app that helps users quickly choose the best machine learning models for their datasets. By uploading a CSV file, the app automatically analyzes the data, suggests a target column, detects whether the problem is classification or regression, and ranks top performing models. It provides clear explanations, performance metrics, visualizations, feature importance, and ready to use Python code, making model selection faster, smarter, and beginner friendly while still useful for experienced practitioners.
+
+Link: https://github.com/AlyaanKhan/Model_AI_Recommender
+
+Quran Sentimental Analysis:
+
+Quran Sentiment Analysis & Guidance is a web app that provides personalized spiritual support by analyzing users’ emotions and suggesting relevant Quranic verses with context. It features a responsive, modern interface with dark/light mode, smooth animations, real-time notifications, and keyboard shortcuts. Users can view emotion analysis, save history, export results, and search or share verses. Built with Flask, React, RAG, the app emphasizes performance, accessibility, and reliability while offering AI-powered, tailored guidance.
+
+Link: https://github.com/AlyaanKhan/Quran-Sentimental-Analysis/tree/master
