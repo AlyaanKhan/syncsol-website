@@ -1,4 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
+
+function useImgLoad() {
+  const [loaded, setLoaded] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => { if (ref.current?.complete) setLoaded(true); }, []);
+  return [ref, loaded, () => setLoaded(true)];
+}
 import { Linkedin, X } from 'lucide-react';
 import { useIntersection } from '../hooks/useIntersection';
 
@@ -84,6 +91,52 @@ function FounderModal({ founder, onClose }) {
   );
 }
 
+function TeamCard({ f, index, onOpen }) {
+  const [imgRef, imgLoaded, onImgLoad] = useImgLoad();
+  return (
+    <div
+      className="team-card fade-in-up"
+      style={{ '--delay': `${index * 0.12}s` }}
+      onClick={() => onOpen(f)}
+      role="button"
+      tabIndex={0}
+      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') onOpen(f); }}
+      aria-label={`View ${f.name} profile`}
+    >
+      <div className="img-wrap team-photo-wrap">
+        {!imgLoaded && <div className="skeleton-placeholder skeleton" />}
+        <img
+          ref={imgRef}
+          src={f.photo}
+          alt={f.name}
+          className={`team-photo${imgLoaded ? ' img-loaded' : ''}`}
+          loading="lazy"
+          onLoad={onImgLoad}
+        />
+      </div>
+      <div className="team-gradient" />
+      <div className="team-view-overlay">
+        <span className="team-view-badge">View Profile</span>
+      </div>
+      <div className="team-body">
+        <p className="team-role">{f.role}</p>
+        <h3 className="team-name">{f.name}</h3>
+        <p className="team-bio">{f.bio}</p>
+        <a
+          href={f.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="team-linkedin"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Linkedin size={14} />
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  );
+}
+
 export default function Team() {
   const [ref, isVisible] = useIntersection();
   const [activeFounder, setActiveFounder] = useState(null);
@@ -98,37 +151,7 @@ export default function Team() {
         </div>
         <div className={`team-grid${isVisible ? ' visible' : ''}`}>
           {founders.map((f, i) => (
-            <div
-              key={f.name}
-              className="team-card fade-in-up"
-              style={{ '--delay': `${i * 0.12}s` }}
-              onClick={() => setActiveFounder(f)}
-              role="button"
-              tabIndex={0}
-              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setActiveFounder(f); }}
-              aria-label={`View ${f.name} profile`}
-            >
-              <img src={f.photo} alt={f.name} className="team-photo" loading="lazy" />
-              <div className="team-gradient" />
-              <div className="team-view-overlay">
-                <span className="team-view-badge">View Profile</span>
-              </div>
-              <div className="team-body">
-                <p className="team-role">{f.role}</p>
-                <h3 className="team-name">{f.name}</h3>
-                <p className="team-bio">{f.bio}</p>
-                <a
-                  href={f.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="team-linkedin"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Linkedin size={14} />
-                  LinkedIn
-                </a>
-              </div>
-            </div>
+            <TeamCard key={f.name} f={f} index={i} onOpen={setActiveFounder} />
           ))}
         </div>
       </div>

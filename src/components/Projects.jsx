@@ -1,4 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
+
+function useImgLoad() {
+  const [loaded, setLoaded] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => { if (ref.current?.complete) setLoaded(true); }, []);
+  return [ref, loaded, () => setLoaded(true)];
+}
 import { Github, X, ExternalLink, Eye, Play } from 'lucide-react';
 import { useIntersection } from '../hooks/useIntersection';
 import { projects } from '../data/projects';
@@ -78,6 +85,7 @@ function VideoModal({ project, onClose }) {
 
 /* ── Showcase Card ──────────────────────────────────── */
 function ShowcaseCard({ project, index, onClick, delay }) {
+  const [imgRef, imgLoaded, onImgLoad] = useImgLoad();
   return (
     <div
       className="sc-card fade-in-up"
@@ -90,7 +98,17 @@ function ShowcaseCard({ project, index, onClick, delay }) {
     >
       {/* image */}
       <div className="sc-thumb-wrap">
-        <img src={project.thumbnail} alt={project.name} className="sc-thumb" loading="lazy" />
+        <div className="img-wrap">
+          {!imgLoaded && <div className="skeleton-placeholder skeleton" />}
+          <img
+            ref={imgRef}
+            src={project.thumbnail}
+            alt={project.name}
+            className={`sc-thumb${imgLoaded ? ' img-loaded' : ''}`}
+            loading="lazy"
+            onLoad={onImgLoad}
+          />
+        </div>
         <div className="sc-img-overlay" />
         <span className="sc-num">0{index + 1}</span>
         <div className="sc-play-hint">
@@ -143,6 +161,7 @@ function ShowcaseCard({ project, index, onClick, delay }) {
 
 /* ── Regular Project Card ───────────────────────────── */
 function ProjectCard({ project, onClick, delay }) {
+  const [imgRef, imgLoaded, onImgLoad] = useImgLoad();
   return (
     <div
       className="project-card fade-in-up"
@@ -154,7 +173,17 @@ function ProjectCard({ project, onClick, delay }) {
       aria-label={`View ${project.name} demo`}
     >
       <div className="project-thumb-wrap">
-        <img src={project.thumbnail} alt={project.name} className="project-thumb" loading="lazy" />
+        <div className="img-wrap">
+          {!imgLoaded && <div className="skeleton-placeholder skeleton" />}
+          <img
+            ref={imgRef}
+            src={project.thumbnail}
+            alt={project.name}
+            className={`project-thumb${imgLoaded ? ' img-loaded' : ''}`}
+            loading="lazy"
+            onLoad={onImgLoad}
+          />
+        </div>
         <div className="project-eye-overlay">
           <div className="project-eye-icon"><Eye size={26} /></div>
         </div>

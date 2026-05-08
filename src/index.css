@@ -145,6 +145,43 @@ button {
   to { transform: rotate(360deg); }
 }
 
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bg-card) 25%,
+    rgba(255,255,255,0.06) 50%,
+    var(--bg-card) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s ease-in-out infinite;
+}
+
+.img-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.img-wrap .skeleton-placeholder {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+}
+
+.img-wrap img {
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.img-wrap img.img-loaded {
+  opacity: 1;
+}
+
 .hero-animate {
   opacity: 0;
   animation: heroFadeIn 0.7s ease forwards;
@@ -741,11 +778,16 @@ button {
   background: var(--bg-3);
 }
 
+.project-thumb-wrap .img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
 .project-thumb {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.4s ease;
+  transition: transform 0.4s ease, opacity 0.35s ease;
 }
 .project-card:hover .project-thumb {
   transform: scale(1.04);
@@ -1690,14 +1732,17 @@ a.contact-info-value:hover { color: var(--yellow); }
   box-shadow: 0 24px 56px rgba(0,0,0,0.6);
 }
 
-.team-photo {
+.team-photo-wrap {
   position: absolute;
   inset: 0;
+}
+
+.team-photo {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center 8%;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.35s ease;
 }
 .team-card:hover .team-photo { transform: scale(1.05); }
 
@@ -1859,13 +1904,19 @@ a.contact-info-value:hover { color: var(--yellow); }
   overflow: hidden;
   min-height: 320px;
 }
+
+.sc-thumb-wrap .img-wrap {
+  position: absolute;
+  inset: 0;
+}
+
 .sc-thumb {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.55s ease;
+  transition: transform 0.55s ease, opacity 0.35s ease;
 }
 .sc-card:hover .sc-thumb { transform: scale(1.05); }
 
