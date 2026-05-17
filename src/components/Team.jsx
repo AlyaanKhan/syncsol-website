@@ -13,7 +13,7 @@ const founders = [
   {
     name: 'Malik Sajawal',
     role: 'Chief Executive Officer',
-    photo: '/Malik Sajawal- CEO.jpeg',
+    photo: '/Malik Sajawal- CEO(1).jpg',
     bio: 'Sajawal oversees the strategic direction and business operations of SyncSol. Focused on growth, client relationships, and long-term vision, he ensures the company delivers impactful digital solutions while maintaining strong communication and client satisfaction across every project. His leadership style bridges technical innovation with real business outcomes, making him the driving force behind SyncSol\'s growth trajectory.',
     linkedin: 'https://www.linkedin.com/in/sajawal-gull-541877330/',
   },
