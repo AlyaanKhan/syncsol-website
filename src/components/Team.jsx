@@ -25,11 +25,11 @@ const founders = [
     linkedin: 'https://www.linkedin.com/in/muhammad-alyaan-amir-2607ba31a/',
   },
   {
-    name: 'Kashan Hashmi',
-    role: 'Chief Marketing Officer',
-    photo: '/Kashan-CMO.jpeg',
-    bio: 'Kashan leads marketing and outreach strategies at SyncSol, focusing on brand growth, client acquisition, and digital presence. With a strong understanding of communication, business outreach, and market positioning, he connects businesses with innovative technology solutions tailored to their goals and growth — building the bridge between great tech and the people who need it.',
-    linkedin: 'https://www.linkedin.com/in/m-kashan-hashmi-878386279/',
+    name: 'M. Rohan Bashir',
+    role: 'Chief Financial Officer',
+    photo: '/Rohan CFO.jpeg',
+    bio: 'M. Rohan Bashir is a hybrid Chief Financial Officer and Chief Marketing Officer holding a Master\'s degree in Accounting & Finance from Hailey College of Commerce, University of the Punjab. He bridges corporate finance, financial modeling, and cash flow strategy with growth marketing, CAC/LTV optimization, and brand positioning to help businesses achieve sustainable profitability and scalable market expansion.',
+    linkedin: 'https://www.linkedin.com/in/m-rohan-bashir/',
   },
 ];
 
