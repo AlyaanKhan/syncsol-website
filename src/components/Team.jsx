@@ -29,7 +29,7 @@ const founders = [
     role: 'Chief Financial Officer',
     photo: '/Rohan CFO.jpeg',
     bio: 'M. Rohan Bashir is a hybrid Chief Financial Officer and Chief Marketing Officer holding a Master\'s degree in Accounting & Finance from Hailey College of Commerce, University of the Punjab. He bridges corporate finance, financial modeling, and cash flow strategy with growth marketing, CAC/LTV optimization, and brand positioning to help businesses achieve sustainable profitability and scalable market expansion.',
-    linkedin: 'https://www.linkedin.com/in/m-rohan-bashir/',
+    linkedin: 'https://www.linkedin.com/in/muhammad-rohan-bashir-4b571a248/',
   },
 ];
 
